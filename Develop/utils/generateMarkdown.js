@@ -1,10 +1,37 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+function renderLicenseBadge(license) {
+    if (!license) {
+      return "";
+    }
+  
+    const badgeUrl = `https://img.shields.io/badge/License-${license}-blue.svg`;
+    const badgeHtml = `<a href="${badgeUrl}" target="_blank">[${license}]</a>`;
+  
+    return badgeHtml;
+  }
+  
+  module.exports = renderLicenseBadge;
+  
 function renderLicenseBadge(license) {}
+    if (!license) {
+      return "";
+    }  
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+    if (!license) {
+      return "";
+    }
+  
+    const licenseUrl = `https://opensource.org/licenses/${license}`;
+  
+    return licenseUrl;
+  }
+  
+  module.exports = renderLicenseLink;
+  
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
