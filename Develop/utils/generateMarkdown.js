@@ -11,16 +11,9 @@ function renderLicenseBadge(license) {
     return badgeHtml;
   }
   
-  module.exports = renderLicenseBadge;
-  
-function renderLicenseBadge(license) {}
-    if (!license) {
-      return "";
-    }  
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
+  // TODO: Create a function that returns the license link
+  // If there is no license, return an empty string
+  function renderLicenseLink(license) {
     if (!license) {
       return "";
     }
@@ -30,12 +23,9 @@ function renderLicenseLink(license) {
     return licenseUrl;
   }
   
-  module.exports = renderLicenseLink;
-  
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {
+  // TODO: Create a function that returns the license section of README
+  // If there is no license, return an empty string
+  function renderLicenseSection(license) {
     if (!license) {
       return "";
     }
@@ -45,33 +35,39 @@ function renderLicenseSection(license) {
   
     return `
     ## License
-  
+    
     ${licenseBadge}
-  
+    
     This project is licensed under the ${license} license.
-  
+    
     [${licenseLink}]
     `;
-  }  
-
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
+  }
+  
+  // TODO: Create a function to generate markdown for README
+  function generateMarkdown(data) {
     const title = data.title;
     const description = data.description;
     const license = data.license;
   
     const markdown = `
     # ${title}
-  
+    
     ${description}
-  
+    
     ## License
-  
+    
     ${renderLicenseSection(license)}
     `;
   
     return markdown;
   }
   
-
-module.exports = generateMarkdown;
+  // Export all functions together as an object
+  module.exports = {
+    renderLicenseBadge,
+    renderLicenseLink,
+    renderLicenseSection,
+    generateMarkdown,
+  };
+  
